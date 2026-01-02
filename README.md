@@ -200,8 +200,38 @@ pixdiff example1.png example2.png --save-csv --save-none
 # saves 'example1_diff.csv'
 ```
 
+## Todo
+
+- [ ] Add optional arguments
+    - [x] `--alpha <int alpha>` to control the opacity/alpha value of the diff mask. default is 128.
+    - [x] `--mask` to only save the "diff mask" with no original image under it, useful for further editing in an image/art software
+    - [x] `--no_save` don't save the diff image
+    - [x] `--path "<string path>"` to specify the diff result name or path. the default is `<image1>` + `_diff` + `<file_extension>` in the current working directory
+    - [x] `--pos` to return the coordinates/positions changed and print to screen.
+    - [x] `--rgba` to customaize the diff's color including alpha value (ignores `--alpha`)
+    - [ ] `--batch` compare one image to many different images
+    - [ ] `--inverse` color in the pixels that are not different
+    - [ ] `--unsafe` enable "unsafe mode", to compare pixels that are larger than the avarage pixel art
+    - [ ] `--verbose` `-v` how many pixels were changed, removed, and added
+    - [ ] `--quiet` `-q`
+    - [ ] `--show` shows the image in the default image viewer app. can be used with `--no-save` to only preview the output (should be default for git integration)
+    - [ ] `--gif` saves image1, image2, and the diff as 1 gif
+    - [ ] `--save-img-mask` is the same as `--save-mask` but uses the pixels of the second image for the mask instead.
+    - [ ] `--color` alternative to `--rgba` that lets you use human readable colors from pillow. ignored if rgba is present.
+
+- [ ] Make diff mask color coded according to type of change
+    - [ ] `green_color = (0, 255, 0, 128)` for added pixels (from (x, x, x, 0) to (x, x, x, n), with n=1–255)
+    - [ ] `red_color = (255, 0, 0, 128)` for deleted pixels (from (x, x, x, n) to (x, x, x, 0), with n=1–255)
+    - [ ] `yellow_color = (255, 230, 0, 128)` for modified pixels (everything else)
+
+- [ ] Add git integration
+
+## Issues
+
+- [ ] In git intergration, if images fail to be compared, leaves behid residual ._export_temp file
+
 ## License
 
-The contents of this repository, exluding the readme_images directory, are licensed under the MIT License. See the [LICENSE](LICENSE) file for more info.
+The contents of this repository, excluding the readme_images directory, are licensed under the MIT License. See the [LICENSE](LICENSE) file for more info.
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">The example images in this README</span> by <span property="cc:attributionName">Zahra A. S.</span> are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""></a></p>
