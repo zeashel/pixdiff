@@ -3,7 +3,7 @@
 """
 This script is open source under the MIT License. See LICENSE for more info.
 
-Copyright (c) 2025 Zahra A. S.
+Copyright (c) 2026 zeashel
 Email: 182934048+zeashel@users.noreply.github.com
 
 pixdiff.py
@@ -161,7 +161,7 @@ def run_argparse():
     """
 
     parser = argparse.ArgumentParser(
-        description='A simple script to identify pixel-by-pixel differences between two images. This script is under the MIT License. Copyright (c) 2025 Zahra A. S.',
+        description='A simple script to identify pixel-by-pixel differences between two images. This script is under the MIT License. Copyright (c) 2026 zeashel',
         epilog='For more information, see documentation at github.com/zeashel/pixdiff',
         prog=NAME
     )
